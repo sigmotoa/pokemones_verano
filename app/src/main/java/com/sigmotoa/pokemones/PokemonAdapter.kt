@@ -5,7 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.sigmotoa.pokemones.databinding.PokemonItemBinding
+
+
 
 /**
  *
@@ -33,7 +36,7 @@ class PokemonAdapter(private val pokemonList: List<Pokemon>): RecyclerView.Adapt
         with(holder){
             binding.tvPokemonName.text=pokemon.pokemonName
             binding.tvPokemonNumber.text= pokemon.pokemonNumber.toString()
-            //binding.imgPokemon.text=pokemon.pokemonImage
+            Glide.with(context).load(pokemon.pokemonImage).into(binding.imgPokemon)
         }
     }
 
